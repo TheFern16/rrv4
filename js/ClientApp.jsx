@@ -1,24 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-const MyTitle = (props) => {
+const App = () => {
   return (
-    <div>
-      <h1 style={ { color: props.color } }>{props.title}</h1>
+    <div className="app">
+      <div className="landing">
+        <h1>Matt's Video Service</h1>
+        <input type="text" placeholder="search" />
+        <a href="#">or Browse All</a>
+      </div>
     </div>
   )
 }
-
-const MyFirstComponent = () => {
-  return (
-    <div id="my-first-component">
-      <MyTitle title="Game of Thrones" color="YellowGreen" />
-      <MyTitle title="Stranger Things" color="GreenYellow" />
-      <MyTitle title="House of Cards" color="Peru" />
-      <MyTitle title="The Americans" color="burlywood" />
-    </div>
-  )
-}
-
-render(<MyFirstComponent />, document.querySelector('#app'));
-
