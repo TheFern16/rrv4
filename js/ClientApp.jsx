@@ -7,9 +7,11 @@ import Landing from './Landing';
 import Search from './Search';
 
 const App = () =>
-  <div className="app">
-    <Route exact path="/" component={Landing} />
-    <Route path="/search" component={Search} />
-  </div>
+  <HashRouter>
+    <div className="app">
+      <Route exact path="/" component={Landing} />
+      <Route path="/search" component={Search} />
+    </div>
+  </HashRouter>
 
 render(<App />, document.querySelector('#app'));
