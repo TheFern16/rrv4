@@ -9,7 +9,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    publicPath: '/public/index'
+    publicPath: '/public/index.html'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']

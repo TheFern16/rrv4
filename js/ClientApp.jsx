@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
+
+// component
+import Landing from './Landing';
 
 const App = () =>
   <div className="app">
-    <div className="landing">
-      <h1>Matt's Video Service</h1>
-      <input type="text" placeholder="search" />
-      <a href="#">or Browse All</a>
-    </div>
+    <Route exact path="/" component={Landing} />
   </div>
 
 render(<App />, document.querySelector('#app'));
