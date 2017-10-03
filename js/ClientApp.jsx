@@ -1,16 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // components
 import Landing from './Landing';
 import Search from './Search';
 
+const FourZeroFour = () => <h1>Page Not Found</h1>
+
 const App = () =>
   <BrowserRouter>
     <div className="app">
-      <Route exact path="/" component={Landing} />
-      <Route path="/search" component={Search} />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/search" component={Search} />
+        <Route component={FourZeroFour} />
+      </Switch>
     </div>
   </BrowserRouter>
 
