@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './Landing';
 import Search from './Search';
 
-const FourZeroFour = () => <h1>Page Not Found</h1>
+const FourZeroFour = () => <h1>Page Not Found</h1>;
 
 const App = () =>
   <BrowserRouter>
