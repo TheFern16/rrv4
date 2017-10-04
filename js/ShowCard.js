@@ -9,16 +9,22 @@ const Wrapper = styled.div`
   margin-bottom: 25px;
   padding-right: 10px;
   overflow: hidden;
-`
+`;
+
+const Image = styled.img`
+  width: 46%;
+  float: left;
+  margin-right: 10px;
+`;
+
+
 const ShowCard = props =>
   <Wrapper>
-    <div className="show-card">
-      <img alt={`${props.show.title} Show Poster`} src={`/img/posters/${props.show.poster}`} />
-      <div>
-        <h3>{props.show.title}</h3>
-        <h4>({props.show.year})</h4>
-        <p>{props.show.description}</p>
-      </div>
+    <Image alt={`${props.show.title} Show Poster`} src={`/img/posters/${props.show.poster}`} />
+    <div>
+      <h3>{props.show.title}</h3>
+      <h4>({props.show.year})</h4>
+      <p>{props.show.description}</p>
     </div>
   </Wrapper>
 
