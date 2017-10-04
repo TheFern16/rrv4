@@ -1,8 +1,18 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
+import styled from 'styled-components';
+
+const Wrapper = styled`
+  width: 32%;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  padding-right: 10px;
+  overflow: hidden;
+`
 
 
-const ShowCard = (props) =>
+const ShowCard = props =>
   <div className="show-card">
     <img alt={`${props.show.title} Show Poster`} src={`/img/posters/${props.show.poster}`} />
     <div>
