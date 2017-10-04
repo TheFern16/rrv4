@@ -2,7 +2,7 @@ import React from 'react';
 import { shape, string } from 'prop-types';
 import styled from 'styled-components';
 
-const Wrapper = styled`
+const Wrapper = styled.div`
   width: 32%;
   border: 2px solid #333;
   border-radius: 4px;
@@ -10,17 +10,17 @@ const Wrapper = styled`
   padding-right: 10px;
   overflow: hidden;
 `
-
-
 const ShowCard = props =>
-  <div className="show-card">
-    <img alt={`${props.show.title} Show Poster`} src={`/img/posters/${props.show.poster}`} />
-    <div>
-      <h3>{props.show.title}</h3>
-      <h4>({props.show.year})</h4>
-      <p>{props.show.description}</p>
+  <Wrapper>
+    <div className="show-card">
+      <img alt={`${props.show.title} Show Poster`} src={`/img/posters/${props.show.poster}`} />
+      <div>
+        <h3>{props.show.title}</h3>
+        <h4>({props.show.year})</h4>
+        <p>{props.show.description}</p>
+      </div>
     </div>
-  </div>
+  </Wrapper>
 
 ShowCard.propTypes = {
   show: shape({
