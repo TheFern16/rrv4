@@ -9,7 +9,7 @@ class Search extends React.Component {
     super(props);
 
     this.state = {
-      searchTerm: 'search'
+      searchTerm: ''
     }
 
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
@@ -34,7 +34,9 @@ class Search extends React.Component {
         </header>
         <div>
           {preload.shows
-            .filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+            .filter(show => `${show.title} ${show.description}`
+              .toUpperCase()
+              .indexOf(this.state.searchTerm.toUpperCase()) >= 0)
             .map((show, key) =>
             <ShowCard show={show} key={show.imdbID} index={key} />
           )}
