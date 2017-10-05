@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import preload from '../data';
 
@@ -15,7 +17,7 @@ class Search extends React.Component {
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
   }
 
-  handleSearchTermChange(e) {
+  handleSearchTermChange(e: SyntheticKeyboardEvent & { target: HTMLInputElement }) {
     this.setState({
       searchTerm: e.target.value
     });
