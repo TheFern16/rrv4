@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -29,12 +29,14 @@ const ShowCard = props =>
   </Wrapper>
 
 ShowCard.propTypes = {
-  show: shape({
-    poster: string.isRequried,
-    title: string.isRequried,
-    year: string.isRequried,
-    description: string.isRequried
-  }).isRequried
+  show: PropTypes.shape({
+    description: PropTypes.string.isRequried,
+    imdbID: PropTypes.string.isRequried,
+    poster: PropTypes.string.isRequried,
+    title: PropTypes.string.isRequried,
+    trailer: PropTypes.string.isRequried,
+    year: PropTypes.string.isRequried
+  })
 }
 
 export default ShowCard;
