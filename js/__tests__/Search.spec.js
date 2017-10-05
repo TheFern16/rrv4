@@ -7,6 +7,7 @@ import Search from '../Search';
 import ShowCard from '../ShowCard';
 
 describe('Search', () => {
+
   it('renders correctly', () => {
     const component = shallow(<Search />);
     expect(component).toMatchSnapshot();
@@ -26,7 +27,8 @@ describe('Search', () => {
       }
     });
 
-    const showCount = preload.shows.filter(show => `${show.title} ${show.description}`
+    const showCount = preload.shows.filter(show =>
+      `${show.title} ${show.description}`
       .toUpperCase()
       .indexOf(searchWord.toUpperCase()) >= 0).length;
 

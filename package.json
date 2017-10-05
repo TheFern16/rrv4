@@ -4,6 +4,7 @@
     "build": "webpack",
     "dev": "webpack-dev-server --inline --content-base public/",
     "test": "NODE_ENV=test ./node_modules/.bin/jest",
+    "testCoverage": "NODE_ENV=test ./node_modules/.bin/jest --coverage",
     "testUpdate": "NODE_ENV=test ./node_modules/.bin/jest -u",
     "watch": "webpack --watch"
   },
