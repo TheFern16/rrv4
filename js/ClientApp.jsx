@@ -5,18 +5,16 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // components
 import Landing from './Landing';
 import Search from './Search';
+import App from './App';
 
-const FourZeroFour = () => <h1>Page Not Found</h1>;
+const renderApp = () => {
+  render(<App />, document.querySelector('#app'));
+}
 
-const App = () =>
-  <BrowserRouter>
-    <div className="app">
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/search" component={Search} />
-        <Route component={FourZeroFour} />
-      </Switch>
-    </div>
-  </BrowserRouter>
+renderApp();
 
-render(<App />, document.querySelector('#app'));
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    renderApp();
+  });
+}
