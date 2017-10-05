@@ -3,6 +3,8 @@
     "api": "node ratingsAPI.js",
     "build": "webpack",
     "dev": "webpack-dev-server --inline --content-base public/",
+    "test": "jest",
+    "test:update": "jest - u",
     "watch": "webpack --watch"
   },
   "dependencies": {
