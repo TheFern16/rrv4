@@ -4,5 +4,5 @@ import Search from '../Search';
 
 test('Search renders correctly', () => {
   const component = shallow(<Search />);
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
