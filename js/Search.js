@@ -1,12 +1,9 @@
 // @flow
-
 import React from 'react';
 
 // components
 import ShowCard from './ShowCard';
 import Header from './Header';
-
-
 
 class Search extends React.Component {
   constructor(props) {
