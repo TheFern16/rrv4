@@ -4,6 +4,7 @@ import React from 'react';
 
 // components
 import ShowCard from './ShowCard';
+import Header from './Header';
 
 
 
@@ -30,14 +31,11 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search">
-        <header>
-          <h1>{this.state.searchTerm}</h1>
-          <input
-            onChange={this.handleSearchTermChange}
-            value={this.state.searchTerm}
-            type="text"
-            placeholder="Search" />
-        </header>
+        <Header
+          showSearch
+          handleSearchTermChange={this.handleSearchTermChange}
+          searchTerm={this.state.searchTerm}
+        />
         <div>
           {this.props.shows
             .filter(show => `${show.title} ${show.description}`
