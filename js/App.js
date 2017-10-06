@@ -3,6 +3,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// data
+import preload from '../data.json';
+
 // components
 import Landing from './Landing';
 import Search from './Search';
@@ -16,7 +19,12 @@ const App = () =>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/search" component={Search} />
-        <Route path="/details/:id" component={Details} />
+        <Route path="/details/:id" component={
+          (props) =>
+            <Details show={preload.shows.find(show =>
+              props.params.id === show.imdbID
+            )} />}
+          />
         <Route component={FourZeroFour} />
       </Switch>
     </div>
