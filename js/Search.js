@@ -1,18 +1,22 @@
 // @flow
 
 import React from 'react';
-import preload from '../data';
 
 // components
 import ShowCard from './ShowCard';
 
+
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    this.defaultProps = {
+      shows: []
+    }
 
     this.state = {
       searchTerm: ''
-    }
+    };
 
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
   }
@@ -35,7 +39,7 @@ class Search extends React.Component {
             placeholder="Search" />
         </header>
         <div>
-          {preload.shows
+          {this.props.shows
             .filter(show => `${show.title} ${show.description}`
               .toUpperCase()
               .indexOf(this.state.searchTerm.toUpperCase()) >= 0)

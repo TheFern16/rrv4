@@ -19,7 +19,7 @@ const App = () =>
     <div className="app">
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/search" component={Search} />
+        <Route path="/search" component={ props => <Search shows={preload.shows} />} />
         <Route
           path="/details/:id"
           component={
