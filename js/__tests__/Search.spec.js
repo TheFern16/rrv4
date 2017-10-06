@@ -9,18 +9,18 @@ import ShowCard from '../ShowCard';
 describe('Search', () => {
 
   it('renders correctly', () => {
-    const component = shallow(<Search />);
+    const component = shallow(<Search shows={preload.shows} />);
     expect(component).toMatchSnapshot();
   });
 
   it('should render correct all of the shows', () => {
-    const component = shallow(<Search />);
+    const component = shallow(<Search shows={preload.shows} />);
     expect(component.find(ShowCard).length).toEqual(preload.shows.length);
   });
 
   it('should render correct number of shows based on search', () => {
     const searchWord = 'black';
-    const component = shallow(<Search />);
+    const component = shallow(<Search shows={preload.shows} />);
     component.find('input').simulate('change', {
       target: {
         value: searchWord
