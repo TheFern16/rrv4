@@ -1,6 +1,9 @@
 // @flow
 import React from 'react';
 
+// react-redux
+import { connect } from 'react-redux';
+
 // components
 import ShowCard from './ShowCard';
 import Header from './Header';

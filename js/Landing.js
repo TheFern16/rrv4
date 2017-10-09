@@ -3,15 +3,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { object } from 'prop-types';
 import setSearchTerm from './actionCreators';
 
-const Landing = (props: { searchTerm: string, handleSearchTermChange: Function }) => (
-  <div className="landing">
-    <h1>Matt's Video Service</h1>
-    <input onChange={props.handleSearchTermChange}value={props.searchTerm} type="text" placeholder="search" />
-    <Link to="/search">or Browse All</Link>
-  </div>
-);
+class Landing extends React.Component {
+  constructor() {
+    super();
+    this.props = {
+      searchTerm: string,
+      handleSearchTermChange: Function
+    };
+
+  }
+
+  goToSearch(event: SyntheticEvent) {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="landing">
+        <h1>Matt's Video Service {props.searchTerm}</h1>
+        <form onSubmit={this.goToSearch}>
+          <input
+            onChange={props.handleSearchTermChange}
+            value={props.searchTerm}
+            type="text" placeholder="search" />
+          </form>
+        <Link to="/search">or Browse All</Link>
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = state => ({ searchTerm: state.searchTerm });
 const mapDispatchToProps = (dispatch: Function) => ({
