@@ -8,10 +8,7 @@ import { connect } from 'react-redux';
 import ShowCard from './ShowCard';
 import Header from './Header';
 
-const Search = (props: {
-  searchTerm: string,
-  shows: Arrow<Show>
-  }) =>
+const Search = (props: { searchTerm: string, shows: Arrow<Show> }) =>
     <div className="search">
       <Header showSearch />
       <div>
@@ -27,7 +24,7 @@ const Search = (props: {
 
 const mapStateToProps = state => ({
   searchTerm: state.searchTerm
-})
+});
 
 
  export default connect(mapStateToProps)(Search);

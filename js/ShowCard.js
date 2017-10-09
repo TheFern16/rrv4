@@ -47,15 +47,4 @@ class ShowCard extends React.Component {
   }
 }
 
-// ShowCard.propTypes = {
-//   show: PropTypes.shape({
-//     description: PropTypes.string.isRequried,
-//     imdbID: PropTypes.string.isRequried,
-//     poster: PropTypes.string.isRequried,
-//     title: PropTypes.string.isRequried,
-//     trailer: PropTypes.string.isRequried,
-//     year: PropTypes.string.isRequried
-//   })
-// }
-
 export default ShowCard;
