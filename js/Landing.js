@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { object } from 'prop-types';
+import type { RouterHistory } from 'react-router-dom';
 import setSearchTerm from './actionCreators';
 
 class Landing extends React.Component {
@@ -11,13 +11,15 @@ class Landing extends React.Component {
     super();
     this.props = {
       searchTerm: string,
-      handleSearchTermChange: Function
+      handleSearchTermChange: Function,
+      history: RouterHistory
     };
 
   }
 
   goToSearch(event: SyntheticEvent) {
     event.preventDefault();
+    this.props.history.push('/search');
   }
 
   render() {
