@@ -1,3 +1,5 @@
+// @flow
+
 import { SET_SEARCH_TERM } from './actions';
 
 function setSearchTerm(searchTerm) {

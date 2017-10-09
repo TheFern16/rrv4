@@ -21,3 +21,5 @@ declare type ActionT<A: ActionType, P> {
   type: A,
   payload: P
 }
+
+export type Action = ActionT<'SET_SEARCH_TERM', string>;
