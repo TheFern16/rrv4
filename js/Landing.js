@@ -9,12 +9,8 @@ import setSearchTerm from './actionCreators';
 class Landing extends React.Component {
   constructor() {
     super();
-    this.props = {
-      searchTerm: string,
-      handleSearchTermChange: Function,
-      history: RouterHistory
-    };
 
+    this.goToSearch = this.goToSearch.bind(this);
   }
 
   goToSearch(event: SyntheticEvent) {
@@ -25,11 +21,11 @@ class Landing extends React.Component {
   render() {
     return (
       <div className="landing">
-        <h1>Matt's Video Service {props.searchTerm}</h1>
+        <h1>Matt's Video Service {this.props.searchTerm}</h1>
         <form onSubmit={this.goToSearch}>
           <input
-            onChange={props.handleSearchTermChange}
-            value={props.searchTerm}
+            onChange={this.props.handleSearchTermChange}
+            value={this.props.searchTerm}
             type="text" placeholder="search" />
           </form>
         <Link to="/search">or Browse All</Link>
