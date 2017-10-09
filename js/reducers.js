@@ -10,6 +10,6 @@ const searchTerm = (state = '', action: Action) => {
   return state;
 }
 
-const rootReducer = combineReducers({ searchTerm: searchTerm });
+const rootReducer = combineReducers({ searchTerm });
 
 export default rootReducer;
