@@ -15,13 +15,6 @@ Object {
 }
 `;
 
-exports[`actionCreators should render results for a black query 1`] = `
-Object {
-  "payload": "black",
-  "type": "SET_SEARCH_TERM",
-}
-`;
-
 exports[`actionCreators should render results for a new york query 1`] = `
 Object {
   "payload": "New York",
