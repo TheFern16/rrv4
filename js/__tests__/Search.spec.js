@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import preload from '../../data.json';
 
 // components
-import Search from '../Search';
+import Search, { Unwrapped as UnwrappedSearch } from '../Search';
 import ShowCard from '../ShowCard';
 
 describe('Search', () => {
