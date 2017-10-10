@@ -59,6 +59,6 @@ const mapDispatchToProps = (dispatch: Function, ownProps) => ({
   getApiData() {
     dispatch(getApiDetails(ownProps.show.imdbID));
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

@@ -8,6 +8,7 @@ export function setSearchTerm(searchTerm: string) {
 }
 
 export function addApiData(apiData: Show) {
+  // console.log('ran', apiData)
   return { type: 'ADD_API_DATA', payload: apiData };
 }
 
@@ -23,3 +24,4 @@ export function getApiDetails(imdbID: string) {
       });
   }
 }
+
