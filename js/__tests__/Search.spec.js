@@ -35,7 +35,7 @@ describe('Search', () => {
     expect(component.find(ShowCard).length).toEqual(showCount);
   });
 
-  it('should render correct amount of shows basd on search from redux', () => {
+  it('should render correct amount of shows based on search from redux', () => {
     const searchWord = 'black';
     store.dispatch(setSearchTerm(searchWord));
     const component = render(
