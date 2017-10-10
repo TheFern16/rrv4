@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { getApiData } from './actionCreators';
+import { getApiDetails } from './actionCreators';
 import Header from './Header';
 import Spinner from './Spinner';
 
@@ -57,7 +57,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch: Function, ownProps) => ({
   getApiData() {
-    dispatch(getApiData(ownProps.show.imdbID));
+    dispatch(getApiDetails(ownProps.show.imdbID));
   }
 })
 

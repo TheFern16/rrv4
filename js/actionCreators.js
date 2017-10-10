@@ -7,7 +7,7 @@ export function setSearchTerm(searchTerm: string) {
   return { type: 'SET_SEARCH_TERM', payload: searchTerm };
 }
 
-export function getApiData(apiData: Show) {
+export function addApiData(apiData: Show) {
   return { type: 'ADD_API_DATA', payload: apiData };
 }
 
