@@ -7,7 +7,7 @@ export function setSearchTerm(searchTerm: string) {
   return { type: 'SET_SEARCH_TERM', payload: searchTerm };
 }
 
-export function addApiData(apiData: Show) {
+export function getApiData(apiData: Show) {
   return { type: 'ADD_API_DATA', payload: apiData };
 }
 
@@ -23,7 +23,3 @@ export function getApiDetails(imdbID: string) {
       });
   }
 }
-
-// export default setSearchTerm;
-// export default addApiData;
-// export default getApiDetails;

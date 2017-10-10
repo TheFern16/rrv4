@@ -9,12 +9,6 @@ import Spinner from './Spinner';
 class Details extends React.Component {
   constructor(props) {
     super(props);
-
-    this.props = {
-      show: Show,
-      rating: string,
-      getApiData: Function
-    }
   }
 
   componentDidMount() {
@@ -61,10 +55,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (dispatch: Function, ownProps) => {
-  return getApiData() {
+const mapDispatchToProps = (dispatch: Function, ownProps) => ({
+  getApiData() {
     dispatch(getApiData(ownProps.show.imdbID));
   }
-}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);
