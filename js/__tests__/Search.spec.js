@@ -3,7 +3,7 @@ import { shallow, render } from 'enzyme';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import { setSearchTerm } from '../actionCreators';
-import { store } from '../store';
+import store from '../store';
 import preload from '../../data.json';
 
 // components
