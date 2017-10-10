@@ -34,5 +34,23 @@ describe('Search', () => {
 
     expect(component.find(ShowCard).length).toEqual(showCount);
   });
+
+  it('should render correct amount of shows basd on search from redux', () => {
+    const searchWord = 'black';
+    store.dispatch(setSearchTerm(searchWord));
+    const component = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Search shows={preload.shows} searchTerm={searchWord} />
+        </MemoryRouter>
+      </Provider>
+    );
+    const showCount = preload.shows.filter(show =>
+      `${show.title} ${show.description}`
+      .toUpperCase()
+      .indexOf(searchWord.toUpperCase()) >= 0).length;
+    expect(component.find('.show-card').length).toEqual(showCount);
+  });
+
 })
 
