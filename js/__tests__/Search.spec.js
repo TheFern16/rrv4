@@ -13,10 +13,10 @@ describe('Search', () => {
     expect(component).toMatchSnapshot();
   });
 
-  // it('should render correct all of the shows', () => {
-  //   const component = shallow(<Search shows={preload.shows} />);
-  //   expect(component.find(ShowCard).length).toEqual(preload.shows.length);
-  // });
+  it('should render correct all of the shows', () => {
+    const component = shallow(<UnwrappedSearch shows={preload.shows} searchTerm='' />);
+    expect(component.find(ShowCard).length).toEqual(preload.shows.length);
+  });
 
   // it('should render correct number of shows based on search', () => {
   //   const searchWord = 'black';
