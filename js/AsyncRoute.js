@@ -4,11 +4,19 @@ import React from 'react';
 import Spinner from './Spinner';
 
 class AsyncRoute extends React.Component {
-  render() {
-    return (
-      <h1>High Order Component</h1>
-    )
+  constructor() {
+    this.state = {
+      loaded: false
+    }
+    componentDidMount() {
+      this.props.loadingPromise
+        .then(module => {
+          this.component = module.default
+          this.setState({ loaded: true });
+        });
+    }
   }
+
 }
 
 export class AsyncRoute;
