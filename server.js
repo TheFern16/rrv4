@@ -32,3 +32,7 @@ server.use((req, res) => {
   res.write(template({ body }));
   res.end();
 });
+
+server.listen(port, () => {
+  console.log(`listening on ${port}`)
+});
