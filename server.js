@@ -6,22 +6,23 @@ const ReactDOMServer = require('react-dom/server');
 const ReactRouter = require('react-router-dom');
 const _ = require('lodash');
 const fs = require('fs');
+const path = require('path');
 const App = require('./js/App').default;
 
 const StaticRouter = ReactRouter.StaticRouter;
 const port = 8080;
-const baseTemplate = fs.readFileSync('./index.html');
+const baseTemplate = fs.readFileSync('./public/index.html');
+console.log(baseTemplate)
 const template = _.template(baseTemplate);
 
 const server = express();
 
-server.use('/public', express.static('./public'));
+server.use('/public', express.static(path.join(__dirname, '/public')));
 
 server.use((req, res) => {
   const context = {};
   const body = ReactDOMServer.renderToString(
-    React.createElement(StaticRouter, { location: req.url, context, },
-      React.createElement(App)
+    React.createElement(StaticRouter, { location: req.url, context }, React.createElement(App)
     )
   );
 
@@ -34,5 +35,5 @@ server.use((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`listening on ${port}`)
+  console.log(`listening on ${port}`);
 });
