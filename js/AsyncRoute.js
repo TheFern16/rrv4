@@ -5,27 +5,26 @@ import Spinner from './Spinner';
 
 class AsyncRoute extends React.Component {
   constructor() {
+    super();
     this.state = {
       loaded: false
     }
-    componentDidMount() {
-      this.props.loadingPromise
-        .then(module => {
-          this.component = module.default
-          this.setState({ loaded: true });
-        });
-    }
   }
-
+  componentDidMount() {
+    this.props.loadingPromise
+      .then(module => {
+        this.component = module.default
+        this.setState({ loaded: true });
+      });
+  }
   render() {
-    return (
-      if (this.state.loaded) {
-        return <this.component {...this.props.props} />
-      }
+    if (this.state.loaded) {
+      return <this.component {...this.props.props} />
+    } else {
       return <Spinner />
-    )
+    }
   }
 
 }
 
-export class AsyncRoute;
+export default AsyncRoute;
