@@ -6,7 +6,7 @@ const ReactDOMServer = require('react-dom/server');
 const ReactRouter = require('react-router-dom');
 const _ = require('lodash');
 const fs = require('fs');
-const path = require('path');
+
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpack = require('webpack');
@@ -31,7 +31,7 @@ server.use(
 
 server.use(webpackHotMiddleware(compiler));
 
-server.use('/public', express.static(path.join(__dirname, '/public')));
+server.use('/public', express.static('./public'));
 
 server.use((req, res) => {
   const context = {};
@@ -41,7 +41,7 @@ server.use((req, res) => {
   );
 
   if (context.url) {
-    res.redirect(context.url);
+    res.redirect(301, context.url);
   }
 
   res.write(template({ body }));
