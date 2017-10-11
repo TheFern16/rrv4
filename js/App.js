@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import type { Match } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -17,25 +17,23 @@ import Details from './Details';
 const FourZeroFour = () => <h1>Page Not Found</h1>;
 
 const App = () =>
-  <BrowserRouter>
-    <Provider store={store}>
-      <div className="app">
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route path="/search" component={ props => <Search shows={preload.shows} />} />
-          <Route
-            path="/details/:id"
-            component={
-              (props: { match: Match }) => {
-                const sShow = preload.shows.find(show => props.match.params.id === show.imdbID);
-                return <Details show={sShow} {...props} />
-              }
+  <Provider store={store}>
+    <div className="app">
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/search" component={ props => <Search shows={preload.shows} />} />
+        <Route
+          path="/details/:id"
+          component={
+            (props: { match: Match }) => {
+              const sShow = preload.shows.find(show => props.match.params.id === show.imdbID);
+              return <Details show={sShow} {...props} />
             }
-          />
-          <Route component={FourZeroFour} />
-        </Switch>
-      </div>
-    </Provider>
-  </BrowserRouter>
+          }
+        />
+        <Route component={FourZeroFour} />
+      </Switch>
+    </div>
+  </Provider>
 
 export default App;
