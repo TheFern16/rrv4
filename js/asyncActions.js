@@ -1,6 +1,9 @@
-import axios from 'axios';
+// @flow
 
-export function getApiDetails(imdbID: string) {
+import axios from 'axios';
+import { addApiData } from './actionCreators';
+
+export default function getApiDetails(imdbID: string) {
   return (dispatch: Function) => {
     axios
       .get(`http://localhost:3000/${imdbID}`)
