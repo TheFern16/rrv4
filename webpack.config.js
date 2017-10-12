@@ -21,11 +21,11 @@ const config = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat'
-    }
+    extensions: ['.js', '.jsx', '.json']
+    // alias: {
+    //   react: 'preact-compat',
+    //   'react-dom': 'preact-compat'
+    // }
   },
   stats: {
     colors: true,
@@ -41,11 +41,11 @@ const config = {
       {
         enforce: 'pre',
         test: /\.jsx?$/,
-        exclude: '/node_modules/',
-        include: [
-          path.resolve('js'),
-          path.resolve('node_modules/preact-compat/src')
-        ]
+        exclude: '/node_modules/'
+        // include: [
+        //   path.resolve('js'),
+        //   path.resolve('node_modules/preact-compat/src')
+        // ]
       },
       {
         test: /\.jsx?$/,
