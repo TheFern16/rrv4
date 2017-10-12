@@ -33,8 +33,8 @@ const App = () =>
               (props: { match: Match }) => {
                 const sShow = preload.shows.find(show => props.match.params.id === show.imdbID);
                 return <AsyncRoute
-                    props={ Object.assign({ show: sShow }, props)}
-                    loadingPromise={ import('./Details') } /> }
+                  props={ Object.assign({ show: sShow }, props)}
+                  loadingPromise={ import('./Details') } /> }
             }
           />
           <Route component={FourZeroFour} />

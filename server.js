@@ -6,6 +6,7 @@ const ReactDOMServer = require('react-dom/server');
 const ReactRouter = require('react-router-dom');
 const _ = require('lodash');
 const fs = require('fs');
+const compression = require('compression');
 
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -31,6 +32,7 @@ server.use(
 
 server.use(webpackHotMiddleware(compiler));
 
+server.use(compression());
 server.use('/public', express.static('./public'));
 
 server.use((req, res) => {
