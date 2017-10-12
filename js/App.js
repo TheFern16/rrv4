@@ -11,9 +11,6 @@ import preload from '../data.json';
 
 // components
 import AsyncRoute from './AsyncRoute';
-// import Landing from './Landing';
-import Search from './Search';
-import Details from './Details';
 
 const FourZeroFour = () => <h1>Page Not Found</h1>;
 
@@ -22,10 +19,14 @@ const App = () =>
     <Provider store={store}>
       <div className="app">
         <Switch>
-          <Route exact path="/" component={ (props) =>
+          <Route exact path="/" component={ props =>
             <AsyncRoute props={props} loadingPromise={ import('./Landing') }/> }
           />
-          <Route path="/search" component={ props => <Search shows={preload.shows} />} />
+          <Route path="/search" component={ props =>
+            <AsyncRoute
+              props={ Object.assign({ shows: preload.shows }, props) }
+              loadingPromise={ import('./Search') } /> }
+          />
           <Route
             path="/details/:id"
             component={
