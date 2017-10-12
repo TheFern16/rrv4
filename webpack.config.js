@@ -41,7 +41,11 @@ const config = {
       {
         enforce: 'pre',
         test: /\.jsx?$/,
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
+        include: [
+          path.resolve('js'),
+          path.resolve('node_modules/preact-compat/src')
+        ]
       },
       {
         test: /\.jsx?$/,
